@@ -21,3 +21,23 @@ def fib_iter(n):
             l[i] = l[i-1] + l[i-2]
             
     return l[n]
+
+#Dynamic programming
+n = 10
+cache = [None] * (n + 1)
+
+
+def fib_dyn(n):
+    
+    #Base Case
+    if n == 0 or n == 1:
+        return n
+
+    #check Cache
+    if cache[n] != None:
+        return cache[n]
+    
+    #Keep Settingg Cache
+    cache[n] = fib_dyn(n-1) + fib_dyn(n-2)
+    
+    return cache[n]
