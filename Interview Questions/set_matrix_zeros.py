@@ -21,6 +21,6 @@ class Solution:
                             if x < 0 or x >= m or y < 0 or y >= n:
                                 break
                                 
-                            if matrix[x][y] != 0:
+                            if matrix[x][y] != 0 and (x,y) not in Visited:
                                 Visited.add((x,y))
                                 matrix[x][y] = 0
